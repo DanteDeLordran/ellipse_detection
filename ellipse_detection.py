@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('circles6.jpg', 0)
+img = cv2.imread('circles4.jpg', 0)
 img = cv2.medianBlur(img, 5)
 cimg = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
@@ -16,7 +16,7 @@ cv2.imshow('Circles', cimg)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-t2 = cv2.imread('circles6.jpg')
+t2 = cv2.imread('circles4.jpg')
 thresh = cv2.cvtColor(t2, cv2.COLOR_BGR2GRAY)
 thresh = cv2.adaptiveThreshold(thresh, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 101, 0)
 count, labels, stats, centroids = cv2.connectedComponentsWithStats(thresh)
